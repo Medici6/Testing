@@ -1,7 +1,7 @@
 {
   "package": {
-    "productName": "My QspiderGame",
-    "version": "1.0.0"
+    "productName": "Testing",
+    "version": "1.1.0"
   },
   "build": {
     "distDir": "../dist/apps/player-standalone",
@@ -13,7 +13,7 @@
       "active": true,
       "targets": "all",
       "identifier": "my.game.id",
-      "publisher": "qSpider games",
+      "publisher": "Medici",
       "copyright": "werewolf",
       "category": "Game",
       "shortDescription": "",
@@ -30,8 +30,8 @@
     "windows": [
       {
         "title": "My Game",
-        "width": 1024,
-        "height": 768,
+        "width": 1320,
+        "height": 710,
         "center": true,
         "resizable": true,
         "fullscreen": false,
