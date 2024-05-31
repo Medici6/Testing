@@ -12,7 +12,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "my.game.id",
+      "identifier": "1913",
       "publisher": "Medici",
       "copyright": "werewolf",
       "category": "Game",
@@ -20,7 +20,7 @@
       "longDescription": ""
     },
     "updater": {
-      "active": true,
+      "active": false,
       "endpoints": [
         ""
       ],
