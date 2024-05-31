@@ -21,9 +21,6 @@
     },
     "updater": {
       "active": false,
-      "endpoints": [
-        ""
-      ],
       "dialog": true,
       "pubkey": ""
     },
