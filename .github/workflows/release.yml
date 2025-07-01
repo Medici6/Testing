@@ -89,7 +89,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [macos-latest, windows-latest]  # Только macOS и Windows
     runs-on: ${{ matrix.platform }}
     env:
       CYPRESS_INSTALL_BINARY: 0
@@ -115,23 +115,6 @@ jobs:
         uses: swatinem/rust-cache@v2
         with:
           workspaces: './src-tauri -> target'
-      
-      # Исправленный шаг установки зависимостей для Linux
-      - name: Install Linux dependencies
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libwebkit2gtk-4.0-dev \
-            build-essential \
-            curl \
-            wget \
-            libssl-dev \
-            libgtk-3-dev \
-            libayatana-appindicator3-dev \
-            libglib2.0-dev \
-            pkg-config
-          export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 
       - run: npm ci
       - run: npm run tauri icon public/game/game-icon.png
