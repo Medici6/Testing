@@ -34,8 +34,8 @@ jobs:
               draft: true,
               prerelease: false
             })
-
             return data.id
+
   build-web:
     needs: [create-release]
     permissions:
@@ -74,7 +74,6 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            // Upload the release asset
             await github.rest.repos.uploadReleaseAsset({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -116,11 +115,24 @@ jobs:
         uses: swatinem/rust-cache@v2
         with:
           workspaces: './src-tauri -> target'
-      - name: install webkit2gtk (ubuntu only)
+      
+      # Исправленный шаг установки зависимостей для Linux
+      - name: Install Linux dependencies
         if: matrix.platform == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y webkit2gtk-4.0
+          sudo apt-get install -y \
+            libwebkit2gtk-4.0-dev \
+            build-essential \
+            curl \
+            wget \
+            libssl-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            libglib2.0-dev \
+            pkg-config
+          export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
+
       - run: npm ci
       - run: npm run tauri icon public/game/game-icon.png
       - uses: tauri-apps/tauri-action@v0
