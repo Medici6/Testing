@@ -86,11 +86,7 @@ jobs:
     needs: create-release
     permissions:
       contents: write
-    strategy:
-      fail-fast: false
-      matrix:
-        platform: [macos-latest, windows-latest]  # Только macOS и Windows
-    runs-on: ${{ matrix.platform }}
+    runs-on: windows-latest  # Теперь только Windows
     env:
       CYPRESS_INSTALL_BINARY: 0
     steps:
