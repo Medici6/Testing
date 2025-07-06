@@ -1,0 +1,62 @@
+
+.Phone_icons img {
+transition: all 1s ease-out;
+-moz-transition: all 1s ease-out;
+-o-transition: all 1s ease-out;
+-webkit-transition: all 1s ease-out;
+}
+.Phone_icons img:hover{
+transform: scale(1.3);
+}
+
+#Vera_I { 
+	position:absolute;
+	left:140px;
+	top:65px;
+	width:101px;
+	height:100px;
+	background-repeat: no-repeat;}
+#Kol_I { 
+	position:absolute;
+	left:140px;
+	top:165px;
+	width:101px;
+	height:100px;
+	background-repeat: no-repeat;}
+#Comp_I { 
+	position:absolute;
+	left:140px;
+	top:265px;
+	width:101px;
+	height:100px;
+	background-repeat: no-repeat;}
+#Bl1 { 
+	position:absolute;
+	left:240px;
+	top:65px;
+	background-repeat: no-repeat;}
+#Bl2 { 
+	position:absolute;
+	left:240px;
+	top:185px;
+	background-repeat: no-repeat;}
+#Bl3 { 
+	position:absolute;
+	left:240px;
+	top:305px;
+	background-repeat: no-repeat;}
+#BackP { 
+	position:absolute;
+	left:540px;
+	top:565px;
+	background-repeat: no-repeat;}
+#BackP1 { 
+	position:absolute;
+	left:740px;
+	top:565px;
+	background-repeat: no-repeat;}
+#Perep { 
+	position:absolute;
+	left:540px;
+	top:65px;
+	background-repeat: no-repeat;}
